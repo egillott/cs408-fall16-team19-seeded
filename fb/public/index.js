@@ -179,7 +179,7 @@ function creategroup() {
 
     window.whispers.loadgroups();
   }
-  window.whispers.new_convo_mocal.close();
+  //window.whispers.new_convo_mocal.close();
 }
 
 function addmemberbtn() {
@@ -311,7 +311,6 @@ Whispers.prototype.loadmessages = function(ref, name) {
     Object.keys(x).forEach(function(k) {
       // this is executed twice for some reason
       // ONLY IF IN CURRENT GROUP DO YOU DISPLAY IT
-      if (name == window.whispers.currentGroup) {
         if (window.whispers.currentMode == false) {
           window.whispers.displaymsg(data.key, x.name, x.text);
         }
@@ -319,7 +318,6 @@ Whispers.prototype.loadmessages = function(ref, name) {
           console.log("display", x.name, x.message);
           window.whispers.displaymsg(x.name, x.name, x.message);
         }
-      }
     });
   };
   $("#chat-name").empty();
