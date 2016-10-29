@@ -1,13 +1,11 @@
-//random todo's:
-//add alert on (un)successful login / signup (replace log in button with signout / name)
-//...done?
+
 
 MESSAGE_TEMPLATE =
     '<div class="message-container">' +
       '<div class="spacing"><div class="pic"></div></div>' +
-      '<span class="name"></span>' +
-      '<br>' +
       '<span class="message"></span>' +
+      '<br>' +
+      '<span class="name"></span>' +
       '<br><br>' +
     '</div>';
 
@@ -156,7 +154,7 @@ function creategroup() {
         name: "default",
       },
       messages: {
-        "-Aa" : {
+        "Firstmsg" : {
           name: "System",
           text: me + " has created the group",
         }
@@ -170,8 +168,6 @@ function creategroup() {
     addMembers(me, key);
     addMembers(tempuser, key);
     addMembers("default", key);
-
-    window.whispers.loadgroups();
   }
   //window.whispers.new_convo_mocal.close();
 }
@@ -375,18 +371,13 @@ $("#signup-modal-button").on("click", function() {
 
 $("#new-chat").on("click", function() {
   window.whispers.new_convo_mocal = new Foundation.Reveal($("#new-convo-modal"));
-  if (window.whispers.name) window.whispers.new_convo_mocal.open();
-  else {
-    alert("please log in");
-  }
+  window.whispers.name window.whispers.new_convo_mocal.open();
 });
 
 $("#new-chat-mem").on("click", function() {
   var new_mem_modal = new Foundation.Reveal($("#new-mem-modal"));
-  if (window.whispers.name) new_mem_modal.open();
-  else {
-    alert("please log in");
-  }
+  window.whispers.name new_mem_modal.open();
+
 })
 
 $("#signup-button").on("click", function() {
