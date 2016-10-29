@@ -66,8 +66,6 @@ function login() {
            window.whispers.name = tempuser
            document.getElementById('user').innerHTML = tempuser;
            window.whispers.password = temppass
-           $('#login-menu').hide();
-           $('#logout-menu').show(); 
            //close
            window.whispers.modal_login.close();
            window.whispers.loadgroups();
@@ -198,7 +196,6 @@ function addMembers(name, key, mode) {
       name: name,
     })
   }
-  window.whispers.displaymembers("groups/" + key);
 }
 
 Whispers.prototype.displaymembers = function(ref) {
@@ -322,7 +319,7 @@ Whispers.prototype.loadmessages = function(ref, name) {
   if (this.currentMode == true) {
     r = this.database.ref(ref + "/members");
   }
-  r.limitToLast(1000).on('child_added', setmessage);
+  r.limitToLast(10).on('child_added', setmessage);
 };
 
 Whispers.prototype.displaymsg = function(key, name, text) {
@@ -345,7 +342,6 @@ Whispers.prototype.displaymsg = function(key, name, text) {
 function submitText() {
     var box = document.getElementById('message-box');
     window.whispers.sendmsg(window.whispers.name, box.value);
-    box.value = "";
 }
 
 
