@@ -108,7 +108,6 @@ function signup() {
   confirmpass = document.getElementById('signconfirmpass').value;
 
   // confirm password
-  if (temppass === confirmpass) {
     // if no duplicate name create user
     setUser(tempuser, temppass)
     //THE CONTROL FLOW HERE MAKES NO SENSE
@@ -120,11 +119,6 @@ function signup() {
       console.log("reload", window.whispers.nodupe);
       location.reload(true);
     }
-
-  }
-  else{
-    document.getElementById('nmp').style.display = "inherit";
-  }
 }
 
 function UserException(msg) {
@@ -143,7 +137,8 @@ function creategroup() {
     var test = window.whispers.grpref.push({
       groupname: tempname,
       members: {
-
+        name: "test",
+        message: "default"
       },
       whisper: mode,
     })
@@ -160,7 +155,7 @@ function creategroup() {
     var test = window.whispers.grpref.push({
       groupname: tempname,
       members: {
-
+        name: "default",
       },
       messages: {
         "-Aa" : {
@@ -176,6 +171,7 @@ function creategroup() {
     console.log("add members");
     addMembers(me, key);
     addMembers(tempuser, key);
+    addMembers("default", key);
 
     window.whispers.loadgroups();
   }
@@ -202,7 +198,7 @@ function addMembers(name, key, mode) {
       name: name,
     })
   }
-  window.whispers.displayMembers("groups/" + key);
+  window.whispers.displaymembers("groups/" + key);
 }
 
 Whispers.prototype.displaymembers = function(ref) {
@@ -214,7 +210,7 @@ Whispers.prototype.displaymembers = function(ref) {
         console.log("member= ", x[k]);
         document.getElementById('mem-list').innerHTML += x[k] + " ";
       }
-      else console.log(k);
+      //else console.log(k);
     });
   };
   document.getElementById('mem-list').innerHTML +="Whisper is " + this.currentMode + " | ";
@@ -236,7 +232,6 @@ function changeGroup(obj) {
           window.whispers.currentGroup = obj.textContent;
           window.whispers.currentMode = x[k].whisper;
           console.log("change mode to"+ x[k].whisper);
-          window.whispers.messageList.innerHTML = ' ';
           window.whispers.currentGroupKey = k;
 
           window.whispers.loadmessages(s, obj.textContent);
