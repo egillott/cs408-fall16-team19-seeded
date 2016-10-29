@@ -60,7 +60,7 @@ function login() {
     var x = snapshot.val();
     Object.keys(x).forEach(function(k) {
       if (x[k].name === tempuser) {
-        if (x[k].password === temppass) {
+        if (x[k].password = temppass) {
            window.whispers.name = tempuser
            document.getElementById('user').innerHTML = tempuser;
            window.whispers.password = temppass
@@ -126,7 +126,7 @@ function creategroup() {
   var me = window.whispers.name;
   console.log(mode);
 
-  if (mode == true) {
+  if (mode = true) {
     var test = window.whispers.grpref.push({
       groupname: tempname,
       members: {
@@ -198,7 +198,7 @@ Whispers.prototype.displaymembers = function(ref) {
     Object.keys(x).forEach(function(k) {
       if (k == "name") {
         console.log("member= ", x[k]);
-        document.getElementById('mem-list').innerHTML += x[k] + " ";
+        document.getElementById('mem-list').innerHTML += x[k+1] + " ";
       }
       //else console.log(k);
     });
@@ -306,7 +306,7 @@ Whispers.prototype.loadmessages = function(ref, name) {
     });
   };
   $("#chat-name").empty();
-  $("#chat-name").append(name);
+  $("#chat-name").append(name+"(1)");
   var r = this.database.ref(ref + "/messages");
   this.currentGroupRef = r;
   if (this.currentMode == true) {
@@ -342,7 +342,6 @@ document.getElementById('message-box').onkeydown = function(event) {
     if (event.keyCode == 13) {
       var box = document.getElementById('message-box');
       window.whispers.sendmsg(window.whispers.name, box.value);
-      box.value = "";
     }
 }
 
