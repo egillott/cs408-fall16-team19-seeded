@@ -368,12 +368,12 @@ $("#signup-modal-button").on("click", function() {
 
 $("#new-chat").on("click", function() {
   window.whispers.new_convo_mocal = new Foundation.Reveal($("#new-convo-modal"));
-  window.whispers.name window.whispers.new_convo_mocal.open();
+  window.whispers.new_convo_mocal.open();
 });
 
 $("#new-chat-mem").on("click", function() {
   var new_mem_modal = new Foundation.Reveal($("#new-mem-modal"));
-  window.whispers.name new_mem_modal.open();
+  window.whispers.new_mem_modal.open();
 
 })
 
