@@ -1,0 +1,236 @@
+html, body { 
+  height:100%; 
+  width:100%;
+  position:fixed;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*padding-top: 60px;*/
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav-title-area {
+  padding-left: 10px;
+  opacity: 0;
+}
+
+.sidenav-title {
+  color:white;
+}
+
+.divider {
+  position: absolute;
+  margin-right: auto;
+  border-right: 1px solid;
+}
+
+.full-width {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.full-height {
+  height: 100%;
+  margin-bottom: auto;
+  margin-top:auto;
+  max-height: initial;
+}
+
+.center {
+  align-content: center;
+}
+
+.room-select {
+  padding: 3px;
+  background-color: white;
+  height: 75px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.room-select:hover {
+  background-color: azure;
+}
+
+.room-title {
+  width: inherit;
+  text-align: center;
+}
+
+.room-separator {
+  height:10px;
+  width: auto;
+}
+
+.chat-select {
+  top: 54px;
+  bottom: 0;
+  margin: auto;
+  position:absolute;
+  background-color: #efefef;
+  display:flex;
+  flex-direction: column;
+  overflow-y:scroll;
+}
+
+.chat-select-footer {
+  display: inline-block;
+  width:inherit;
+  padding-right: 30px;
+  bottom:0;
+  background-color: black;
+}
+
+.chat-footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
+  display: inline-block;
+  width:inherit;
+  position: fixed;
+  bottom:0;
+}
+
+.chat-window {
+  top: 100px;
+  bottom: 60px;
+  padding:10px;
+  width:inherit;
+  margin: auto;
+  position:absolute;
+  display:flex;
+  flex-direction: column;
+  overflow-y:scroll;
+  background-color: white;
+}
+
+.lower {
+  top:50px;
+}
+
+.message-container {
+  width: 100%;
+  display:block;
+}
+
+.message-box {
+  padding-right: 10px;
+  width:300px;
+}
+
+.chat-input {
+  display: flex;
+  flex: auto;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 0.7em;
+}
+
+.message-text {
+  font-size: 0.9em;
+}
+
+.message {
+  right: 30px;
+}
+
+.recieved-message {
+  float:left;
+  width: 75%;
+  height: auto;
+  border-style: 1px solid black;
+  border-radius: 5px;
+  /*background-color:darkgray;*/
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sent-message {
+  float:right;
+  width:45%;
+  text-align: right;
+  height: auto;
+  border-style: 1px solid black;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.create-user {
+  height:auto;
+  width:auto;
+  background-color: white;
+}
+
+.wrongpass {
+  color: red;
+  display: none;
+}
+
+.nomatchpass {
+  color: red;
+  display: none;
+}
+
+.exist {
+  color: red;
+  display: none;
+}
+
+.memlist {
+  
+}
+
+#footer{
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    line-height: 50px;
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+}
+
+#main {
+    transition: margin-left .5s;
+    /*padding: 16px;*/
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
