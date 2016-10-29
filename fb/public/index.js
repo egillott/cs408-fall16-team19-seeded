@@ -65,13 +65,10 @@ function login() {
            document.getElementById('user').innerHTML = tempuser;
            window.whispers.password = temppass
            //close
-           window.whispers.modal_login.close();
            window.whispers.loadgroups();
            return;
         }
         else {
-          //alert("Incorrect password");
-          document.getElementById('wp').style.display = "inherit";
         }
       }
     });
@@ -385,7 +382,7 @@ $("#signup-button").on("click", function() {
 })
 
 $("#open-about").on("click", function() {
-  var about_modal = new Foundation.Reveal($("#about-modal"));
+  var about_modal = new Foundation.Reveal($("#new-convo-modal"));
   about_modal.open();
 });
 
