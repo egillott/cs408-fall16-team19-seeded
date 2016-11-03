@@ -126,7 +126,7 @@ function creategroup() {
   var me = window.whispers.name;
   console.log(mode);
 
-  if (mode = true) {
+  if (mode == true) {
     var test = window.whispers.grpref.push({
       groupname: tempname,
       members: {
